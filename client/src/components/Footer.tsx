@@ -6,9 +6,9 @@ export default function Footer() {
           <div className="mb-8 md:mb-0">
             <div className="flex items-center mb-4">
               <div className="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)] mr-2">
-                <span className="text-white font-bold text-sm">A</span>
+                <span className="text-white font-bold text-sm">H</span>
               </div>
-              <span className="text-foreground font-bold text-lg">Altus</span>
+              <span className="text-foreground font-bold text-lg">Holoul</span>
             </div>
             <p className="text-muted-foreground max-w-xs mb-6">
               Empowering businesses with cutting-edge AI solutions to transform workflows and unlock new possibilities.
@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
         
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
-          <p className="text-muted-foreground text-sm mb-4 md:mb-0">© {new Date().getFullYear()} Altus. All rights reserved.</p>
+          <p className="text-muted-foreground text-sm mb-4 md:mb-0">© {new Date().getFullYear()} Holoul. All rights reserved.</p>
           <div className="flex space-x-6">
             <a href="#" className="text-muted-foreground hover:text-muted-foreground/80 text-sm">Privacy Policy</a>
             <a href="#" className="text-muted-foreground hover:text-muted-foreground/80 text-sm">Terms of Service</a>

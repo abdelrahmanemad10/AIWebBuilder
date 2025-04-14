@@ -32,9 +32,9 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
             {/* Logo */}
             <a href="#" className="flex items-center">
               <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-blue-500 flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)]">
-                <span className="text-white font-bold text-xl">A</span>
+                <span className="text-white font-bold text-xl">H</span>
               </div>
-              <span className="ml-2 text-white font-bold text-xl">Altus</span>
+              <span className="ml-2 text-white font-bold text-xl">Holoul</span>
             </a>
             
             {/* Desktop Navigation */}

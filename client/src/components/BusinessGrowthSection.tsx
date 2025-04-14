@@ -15,6 +15,7 @@ export default function BusinessGrowthSection() {
           <div className="text-primary text-sm font-medium mb-2">Building AI solution</div>
           <h2 className="text-4xl font-bold mb-2">Business Growth</h2>
           <p className="text-2xl text-muted-foreground font-light">through AI Excellence</p>
+          <p className="text-lg text-muted-foreground mt-4">Led by <span className="text-primary font-medium">Abdelrahman Emad</span>, our Chief AI Engineer</p>
           
           <motion.div 
             className="flex justify-center mt-12 space-x-6"

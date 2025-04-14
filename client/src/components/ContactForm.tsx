@@ -50,7 +50,7 @@ export default function ContactForm({ onClose, onSuccess }: ContactFormProps) {
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[500px] bg-card">
         <DialogHeader>
-          <DialogTitle className="text-2xl">Get Started with Altus AI</DialogTitle>
+          <DialogTitle className="text-2xl">Get Started with Holoul AI</DialogTitle>
           <DialogDescription>
             Fill out the form below and our team will get back to you shortly.
           </DialogDescription>
