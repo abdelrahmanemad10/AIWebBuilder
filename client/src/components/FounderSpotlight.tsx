@@ -91,19 +91,18 @@ export default function FounderSpotlight() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ 
                         opacity: 1, 
-                        y: 0,
-                        x: [0, Math.sin(index) * 10, 0],
-                        y: [0, Math.cos(index) * 10, 0],
+                        translateX: [0, Math.sin(index) * 10, 0],
+                        translateY: [0, Math.cos(index) * 10, 0]
                       }}
                       transition={{
                         opacity: { duration: 0.4, delay: 0.2 + index * 0.1 },
-                        x: { 
+                        translateX: { 
                           duration: 5 + index, 
                           repeat: Infinity, 
                           ease: "easeInOut",
                           delay: index * 0.2
                         },
-                        y: { 
+                        translateY: { 
                           duration: 5 + index, 
                           repeat: Infinity, 
                           ease: "easeInOut",
