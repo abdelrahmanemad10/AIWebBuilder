@@ -55,7 +55,7 @@ export default function CirclePattern({ className = "" }: CirclePatternProps) {
   
   return (
     <div ref={containerRef} className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] z-0 ${className}`}>
-      <style jsx>{`
+      <style>{`
         .circle-dot {
           position: absolute;
           width: 10px;
