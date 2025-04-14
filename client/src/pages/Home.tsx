@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import AIPowerSection from "@/components/AIPowerSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import BusinessGrowthSection from "@/components/BusinessGrowthSection";
+import ProjectsSection from "@/components/ProjectsSection";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { useToast } from "@/hooks/use-toast";
@@ -36,6 +37,7 @@ export default function Home() {
         <HeroSection onGetStarted={handleGetStarted} />
         <AIPowerSection />
         <FeaturesSection />
+        <ProjectsSection />
         <BusinessGrowthSection />
       </main>
       <Footer />

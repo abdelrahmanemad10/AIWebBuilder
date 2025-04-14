@@ -41,7 +41,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
             <div className="hidden md:flex ml-10 space-x-8">
               <a href="#" className="text-white hover:text-primary/90 font-medium transition-all">About</a>
               <a href="#features" className="text-white hover:text-primary/90 font-medium transition-all">Features</a>
-              <a href="#pricing" className="text-white hover:text-primary/90 font-medium transition-all">Pricing</a>
+              <a href="#projects" className="text-white hover:text-primary/90 font-medium transition-all">Projects</a>
               <a href="#" className="text-white hover:text-primary/90 font-medium transition-all">Blog</a>
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function Navbar({ onGetStarted }: NavbarProps) {
             <div className="flex flex-col space-y-3">
               <a href="#" className="text-white hover:text-primary font-medium py-2 transition-all">About</a>
               <a href="#features" className="text-white hover:text-primary font-medium py-2 transition-all">Features</a>
-              <a href="#pricing" className="text-white hover:text-primary font-medium py-2 transition-all">Pricing</a>
+              <a href="#projects" className="text-white hover:text-primary font-medium py-2 transition-all">Projects</a>
               <a href="#" className="text-white hover:text-primary font-medium py-2 transition-all">Blog</a>
             </div>
           </div>
