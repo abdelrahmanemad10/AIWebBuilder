@@ -4,6 +4,11 @@ import AIPowerSection from "@/components/AIPowerSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import BusinessGrowthSection from "@/components/BusinessGrowthSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import FounderSpotlight from "@/components/FounderSpotlight";
+import JourneyTimeline from "@/components/JourneyTimeline";
+import VisionValueSection from "@/components/VisionValueSection";
+import InsightsSection from "@/components/InsightsSection";
+import CollaborationSection from "@/components/CollaborationSection";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import { useToast } from "@/hooks/use-toast";
@@ -38,7 +43,12 @@ export default function Home() {
         <AIPowerSection />
         <FeaturesSection />
         <ProjectsSection />
+        <FounderSpotlight />
+        <JourneyTimeline />
+        <VisionValueSection />
+        <InsightsSection />
         <BusinessGrowthSection />
+        <CollaborationSection />
       </main>
       <Footer />
       {showContactForm && (
