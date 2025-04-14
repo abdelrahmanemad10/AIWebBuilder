@@ -1,7 +1,12 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import AnimatedText from "./AnimatedText";
+import AnimatedCard from "./AnimatedCard";
+import ScrollReveal from "./ScrollReveal";
+import ParallaxSection from "./ParallaxSection";
+import AnimatedCirclePattern from "./AnimatedCirclePattern";
+import { buttonHover, staggerContainer, staggerFast } from "@/lib/animations";
 
 export default function ProjectsSection() {
   const projects = [
@@ -68,76 +73,200 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-background relative">
-      <div className="container mx-auto px-4">
-        <motion.div
+    <section id="projects" className="py-20 bg-background relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <AnimatedCirclePattern 
+          className="left-0 bottom-0 opacity-70" 
+          size={400} 
+          animationType="both" 
+          density="low"
+        />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <ScrollReveal 
           className="text-center max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          animation="slide-up"
         >
-          <div className="text-primary text-sm font-medium mb-2">Our Portfolio</div>
-          <h2 className="text-4xl font-bold mb-4">Recent AI Projects</h2>
+          <AnimatedText
+            text="Our Portfolio"
+            className="text-primary text-sm font-medium mb-2"
+            animationType="character"
+            speed="fast"
+          />
+          
+          <AnimatedText 
+            text="Recent AI Projects"
+            className="text-4xl font-bold mb-4"
+            animationType="word"
+            speed="medium"
+            delay={0.2}
+          />
+          
           <p className="text-muted-foreground">
             Explore our diverse portfolio of AI projects led by <span className="text-primary font-medium">Abdelrahman Emad</span>, 
             showcasing our expertise in machine learning, natural language processing, and deep learning.
           </p>
-        </motion.div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {projects.map((project, index) => (
-            <motion.div
+            <ScrollReveal
               key={project.id}
-              className="bg-card/70 border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(139,92,246,0.3)]"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
+              animation={index % 2 === 0 ? "slide-right" : "slide-left"}
+              delay={index * 0.1}
+              threshold={0.1}
+              className="h-full"
             >
-              <div className="p-6">
-                <div className="flex items-start mb-4">
-                  <div className="w-12 h-12 rounded-full bg-indigo-600/20 flex items-center justify-center mr-4">
-                    <div className="text-primary">
-                      {project.icon}
+              <AnimatedCard
+                className="h-full"
+                glowEffect={true}
+                glowColor="rgba(139, 92, 246, 0.3)"
+                tiltEffect={true}
+                hoverScale={true}
+              >
+                <div className="p-6">
+                  <div className="flex items-start mb-4">
+                    <motion.div 
+                      className="w-12 h-12 rounded-full bg-indigo-600/20 flex items-center justify-center mr-4"
+                      animate={{ 
+                        boxShadow: ["0 0 5px rgba(139, 92, 246, 0.2)", "0 0 15px rgba(139, 92, 246, 0.4)", "0 0 5px rgba(139, 92, 246, 0.2)"] 
+                      }}
+                      transition={{ 
+                        duration: 3, 
+                        ease: "easeInOut", 
+                        repeat: Infinity,
+                        delay: index * 0.5
+                      }}
+                    >
+                      <motion.div 
+                        className="text-primary"
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ 
+                          duration: 20, 
+                          ease: "linear", 
+                          repeat: Infinity 
+                        }}
+                      >
+                        {project.icon}
+                      </motion.div>
+                    </motion.div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                      <p className="text-muted-foreground mb-4">
+                        {project.description}
+                      </p>
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4">
-                      {project.description}
-                    </p>
+
+                  <motion.div 
+                    className="flex flex-wrap gap-2 mb-4"
+                    variants={staggerFast}
+                    initial="initial"
+                    whileInView="animate"
+                    viewport={{ once: true }}
+                  >
+                    {project.tech.map((tech, i) => (
+                      <motion.div
+                        key={i}
+                        variants={{
+                          initial: { opacity: 0, scale: 0.8 },
+                          animate: { 
+                            opacity: 1, 
+                            scale: 1,
+                            transition: {
+                              type: "spring",
+                              stiffness: 300,
+                              damping: 20,
+                              delay: i * 0.05
+                            }
+                          }
+                        }}
+                      >
+                        <Badge variant="outline" className="bg-muted/30">{tech}</Badge>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+
+                  <div className="mt-4">
+                    <h4 className="font-medium mb-2">Key Highlights:</h4>
+                    <motion.ul 
+                      className="space-y-2"
+                      variants={staggerFast}
+                      initial="initial"
+                      whileInView="animate"
+                      viewport={{ once: true }}
+                    >
+                      {project.highlights.map((highlight, i) => (
+                        <motion.li 
+                          key={i} 
+                          className="flex items-start"
+                          variants={{
+                            initial: { opacity: 0, x: -10 },
+                            animate: { 
+                              opacity: 1, 
+                              x: 0,
+                              transition: {
+                                type: "spring",
+                                stiffness: 300,
+                                damping: 20,
+                                delay: i * 0.1
+                              }
+                            }
+                          }}
+                        >
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ 
+                              delay: 0.3 + (i * 0.1),
+                              type: "spring",
+                              stiffness: 500,
+                              damping: 20
+                            }}
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mr-2 mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                          </motion.div>
+                          <span className="text-sm text-muted-foreground">{highlight}</span>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+                  </div>
+
+                  <div className="mt-6">
+                    <motion.div
+                      variants={buttonHover}
+                      initial="initial"
+                      whileHover="hover"
+                      whileTap="tap"
+                    >
+                      <Button variant="link" className="text-primary text-sm p-0 h-auto flex items-center gap-2">
+                        View details
+                        <motion.div
+                          animate={{ x: [0, 4, 0] }}
+                          transition={{
+                            duration: 1.5,
+                            ease: "easeInOut",
+                            repeat: Infinity,
+                          }}
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </motion.div>
+                      </Button>
+                    </motion.div>
                   </div>
                 </div>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, i) => (
-                    <Badge key={i} variant="outline" className="bg-muted/30">{tech}</Badge>
-                  ))}
-                </div>
-
-                <div className="mt-4">
-                  <h4 className="font-medium mb-2">Key Highlights:</h4>
-                  <ul className="space-y-2">
-                    {project.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mr-2 mt-1 flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span className="text-sm text-muted-foreground">{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-6">
-                  <Button variant="link" className="text-primary text-sm p-0 h-auto hover:text-primary/80 flex items-center gap-2">
-                    View details
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
+              </AnimatedCard>
+            </ScrollReveal>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
