@@ -1,0 +1,67 @@
+1. Palmprint Classification Project
+Overview:
+Developed a machine learning model to classify palmprint images for biometric identification. The system accurately distinguishes between individuals based on palmprint features.
+
+Tech Stack & Tools:
+Python, OpenCV, Scikit-learn, TensorFlow/Keras
+
+Highlights:
+
+Built a robust image preprocessing pipeline (grayscale conversion, noise reduction, ROI extraction).
+
+Used deep learning (CNN) for high-accuracy classification.
+
+Evaluated model using metrics like accuracy, precision, recall, and confusion matrix.
+
+Potential use cases in security, access control, and identity verification.
+
+2. AI Strategy Recommendation Model (Saudi Arabia)
+Overview:
+Created an intelligent recommendation system to help businesses in Saudi Arabia identify optimal AI strategies based on industry, company size, and digital maturity.
+
+Tech Stack & Tools:
+Python, Scikit-learn, Pandas, Decision Trees, NLP, Streamlit
+
+Highlights:
+
+Collected and processed data on company needs, regulations, and tech readiness.
+
+Used decision tree models and expert systems to generate custom AI strategies.
+
+Interface built using Streamlit for ease of access by non-technical users.
+
+Project supports Saudi Arabia’s Vision 2030 in digital transformation.
+
+3. Arabic Question-Answering System Using AI
+Overview:
+Built an NLP-based system that answers user queries based on Arabic documents using advanced language models.
+
+Tech Stack & Tools:
+Python, FastAPI, Hugging Face Transformers, Streamlit
+
+Highlights:
+
+Used pre-trained transformer models (AraBERT or similar) for understanding Arabic.
+
+Integrated with FastAPI for backend and Streamlit for frontend.
+
+Supports document upload and real-time Q&A based on user queries.
+
+Designed for academic, governmental, and customer support applications.
+
+4. Deep Learning for Portfolio Optimization
+Overview:
+Implemented a deep learning model that optimizes portfolio allocation by directly maximizing Sharpe ratio, bypassing traditional return forecasting.
+
+Tech Stack & Tools:
+Python, TensorFlow/Keras, NumPy, Pandas, Matplotlib
+
+Highlights:
+
+Used neural networks to adjust asset weights dynamically based on historical price data.
+
+Trained and evaluated model performance on ETFs and stock indexes.
+
+Compared against traditional portfolio strategies (mean-variance optimization).
+
+Showed promise in adaptive asset allocation and risk-adjusted return improvement.
