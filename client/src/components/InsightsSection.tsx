@@ -8,28 +8,31 @@ import { fadeInUp, staggerContainer, buttonHover } from "@/lib/animations";
 export default function InsightsSection() {
   const insights = [
     {
-      title: "My Approach to AI Project Design",
-      description: "How I balance technical innovation with practical implementation to ensure AI projects deliver real business value.",
-      date: "April 2, 2025",
-      category: "Methodology",
-      image: "bg-gradient-to-br from-indigo-500/10 to-blue-600/10", // Placeholder, would be image in production
-      readTime: "5 min read"
+      title: "Enhancing Arabic Medical Document Classification Using Hybrid Deep Learning Approach",
+      description: "My IEEE published research on a hybrid CNN-LSTM model that significantly improves the classification accuracy of Arabic medical documents.",
+      date: "April 2024",
+      category: "IEEE Publication",
+      link: "https://ieeexplore.ieee.org/document/10620532",
+      image: "bg-gradient-to-br from-indigo-500/10 to-blue-600/10",
+      readTime: "Research Paper"
     },
     {
-      title: "Deep Learning in Portfolio Management",
-      description: "Exploring how neural networks can optimize investment portfolios more effectively than traditional approaches.",
-      date: "March 15, 2025", 
-      category: "Research",
+      title: "Deep Learning for Arabic Question Answering: Challenges and Opportunities",
+      description: "My IEEE research exploring innovative approaches to developing Arabic language question-answering systems using deep learning.",
+      date: "March 2024", 
+      category: "IEEE Publication",
+      link: "https://ieeexplore.ieee.org/document/10580486",
       image: "bg-gradient-to-br from-purple-500/10 to-indigo-600/10",
-      readTime: "8 min read"
+      readTime: "Research Paper"
     },
     {
-      title: "Corporate Governance & AI: My Research Journey",
-      description: "Insights from my academic research on how AI systems can enhance corporate governance and IFRS compliance.",
-      date: "February 28, 2025",
-      category: "Research",
+      title: "Participation in International Conference of Arab Academy for Science and Maritime Transport",
+      description: "My contribution to advancing research in AI and data science at the international academic conference, representing Damanhour University.",
+      date: "2023",
+      category: "Conference",
+      link: "https://rosaelyoussef.com/1185695/%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%AF%D9%85%D9%86%D9%87%D9%88%D8%B1-%D8%AA%D8%B4%D8%A7%D8%B1%D9%83-%D9%81%D9%8A-%D8%A7%D9%84%D9%85%D8%A4%D8%AA%D9%85%D8%B1-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A-%D9%84%D9%84%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-%D9%84%D9%84%D8%B9%D9%84%D9%88%D9%85-%D9%88%D8%A7%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A",
       image: "bg-gradient-to-br from-blue-500/10 to-cyan-600/10",
-      readTime: "6 min read"
+      readTime: "Conference Paper"
     }
   ];
 
@@ -122,19 +125,26 @@ export default function InsightsSection() {
                     whileTap="tap"
                     className="mt-auto"
                   >
-                    <Button variant="link" className="p-0 h-auto text-primary flex items-center gap-2">
-                      Read article
-                      <motion.div
-                        animate={{ x: [0, 4, 0] }}
-                        transition={{
-                          duration: 1.5,
-                          ease: "easeInOut",
-                          repeat: Infinity,
-                        }}
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                      </motion.div>
-                    </Button>
+                    <a 
+                      href={insight.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="no-underline"
+                    >
+                      <Button variant="link" className="p-0 h-auto text-primary flex items-center gap-2">
+                        View publication
+                        <motion.div
+                          animate={{ x: [0, 4, 0] }}
+                          transition={{
+                            duration: 1.5,
+                            ease: "easeInOut",
+                            repeat: Infinity,
+                          }}
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </motion.div>
+                      </Button>
+                    </a>
                   </motion.div>
                 </div>
               </AnimatedCard>

@@ -34,8 +34,8 @@ export default function JourneyTimeline() {
     },
     {
       year: "2021",
-      title: "Published IEEE Paper",
-      description: "Research on advanced AI methodologies published in IEEE journal",
+      title: "Published IEEE Research Papers",
+      description: "Research on Arabic Medical Document Classification and Arabic Question-Answering Systems published in IEEE journals",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/><path d="M12 3v12"/><circle cx="12" cy="20" r="1"/></svg>
       ),

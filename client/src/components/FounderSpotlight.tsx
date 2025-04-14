@@ -15,7 +15,9 @@ export default function FounderSpotlight() {
   ];
   
   const achievements = [
-    "IEEE publication",
+    "IEEE publications on Arabic Medical Document Classification using hybrid deep learning",
+    "IEEE research on Arabic Question Answering systems",
+    "Presenter at International Conference of Arab Academy for Science and Maritime Transport",
     "Academic research on corporate governance & IFRS",
     "Multiple AI projects including palmprint classification models",
     "AI Strategy consulting for businesses in Saudi Arabia"
@@ -190,12 +192,19 @@ export default function FounderSpotlight() {
                   whileHover="hover"
                   whileTap="tap"
                 >
-                  <Button 
-                    variant="outline" 
-                    className="border-gray-600 hover:border-primary"
+                  <a 
+                    href="https://ieeexplore.ieee.org/document/10620532" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="no-underline"
                   >
-                    View my research
-                  </Button>
+                    <Button 
+                      variant="outline" 
+                      className="border-gray-600 hover:border-primary"
+                    >
+                      View my research
+                    </Button>
+                  </a>
                 </motion.div>
               </motion.div>
             </div>
